@@ -5,8 +5,8 @@ describe('Transaction', () => {
   let differentTransaction;
 
   beforeEach(() => {
-    transaction = new Transaction(new Date(2012, 1, 10), 100, 3000);
-    differentTransaction = new Transaction(new Date(2018, 7, 2), -100, 2000);
+    transaction = new Transaction(100, 3000, new Date(2012, 1, 10));
+    differentTransaction = new Transaction(-100, 2000, new Date(2018, 7, 2));
   });
 
   describe('date', () => {
@@ -19,7 +19,7 @@ describe('Transaction', () => {
     });
 
     it('uses todays date if none is defined', () => {
-      transaction = new Transaction(undefined, -100, 2000);
+      transaction = new Transaction(-100, 2000);
       expect(transaction.date).toEqual(new Date());
     });
   });
