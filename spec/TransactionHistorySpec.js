@@ -38,5 +38,12 @@ describe('TransactionHistory', () => {
 
       expect(transactionHistory.transactions[0].__proto__.constructor.name).toEqual('MockTransaction');
     });
+
+    it('adds multiple object into transactions', () => {
+      transactionHistory.add(100, 1000, new Date(2012, 1, 1));
+      transactionHistory.add(100, 1000, new Date(2012, 1, 1));
+
+      expect(transactionHistory.transactions.length).toEqual(2);
+    });
   });
 });
