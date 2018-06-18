@@ -1,3 +1,7 @@
 module.exports = {
-    "extends": "airbnb-base"
+  "plugins": ["jasmine"],
+  "extends": "airbnb-base",
+  "env": {
+    "jasmine": true
+  }
 };
