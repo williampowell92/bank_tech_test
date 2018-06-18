@@ -5,7 +5,7 @@ describe('Transaction', () => {
   let differentTransaction;
 
   beforeEach(() => {
-    transaction = new Transaction(new Date(2012, 1, 10));
+    transaction = new Transaction(new Date(2012, 1, 10), 100);
     differentTransaction = new Transaction(new Date(2018, 7, 2));
   });
 
@@ -16,6 +16,12 @@ describe('Transaction', () => {
 
     it('can be created with a different date', () => {
       expect(differentTransaction.date).toEqual(new Date(2018, 7, 2));
+    });
+  });
+
+  describe('amount', () => {
+    it('is created with an amount', () => {
+      expect(transaction.amount).toEqual(100);
     });
   });
 });
