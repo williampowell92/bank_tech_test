@@ -28,12 +28,24 @@ describe('TransactionHistory', () => {
   describe('addTransaction', () => {
     it('can add a transaction to transactions', () => {
       transactionHistory.add(transaction);
+
       expect(transactionHistory.transactions).toEqual([transaction]);
     });
 
     it('can add a different transaction to transactions', () => {
       transactionHistory.add(differentTransaction);
+
       expect(transactionHistory.transactions).toEqual([differentTransaction]);
+    });
+
+    it('can add multiple transactions to transactions', () => {
+      transactionHistory.add(transaction);
+      transactionHistory.add(differentTransaction);
+
+      expect(transactionHistory.transactions).toEqual([
+        transaction,
+        differentTransaction,
+      ]);
     });
   });
 });
