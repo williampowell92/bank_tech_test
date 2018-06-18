@@ -1,0 +1,25 @@
+{
+  "name": "bank_tech_test",
+  "version": "1.0.0",
+  "description": "Practice tech test undertaken as part of my journey as Makers Academy. Create a CLI bank application for depositing, withdrawing and printing bank statements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williampowell92/bank_tech_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williampowell92/bank_tech_test/issues"
+  },
+  "homepage": "https://github.com/williampowell92/bank_tech_test#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "jasmine": "^3.1.0"
+  }
+}
