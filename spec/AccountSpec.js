@@ -24,4 +24,11 @@ describe('Account', () => {
       expect(account.balance).toEqual(200);
     });
   });
+
+  describe('withdraw', () => {
+    it('reduces balance by a given amount', () => {
+      account.withdraw(100);
+      expect(account.balance).toEqual(-100);
+    });
+  });
 });
