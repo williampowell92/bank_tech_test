@@ -5,7 +5,7 @@ describe('Account', () => {
   let transactionHistory;
 
   beforeEach(() => {
-    transactionHistory = {};
+    transactionHistory = jasmine.createSpyObj('transactionHistory', ['add']);
     account = new Account(transactionHistory);
   });
 

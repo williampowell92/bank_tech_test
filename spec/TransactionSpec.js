@@ -17,6 +17,11 @@ describe('Transaction', () => {
     it('can be created with a different date', () => {
       expect(differentTransaction.date).toEqual(new Date(2018, 7, 2));
     });
+
+    it('uses todays date if none is defined', () => {
+      transaction = new Transaction(undefined, -100, 2000);
+      expect(transaction.date).toEqual(new Date());
+    });
   });
 
   describe('amount', () => {
