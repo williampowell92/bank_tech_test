@@ -30,5 +30,10 @@ describe('Account', () => {
       account.withdraw(100);
       expect(account.balance).toEqual(-100);
     });
+
+    it('reduces balance by a different amount', () => {
+      account.withdraw(200);
+      expect(account.balance).toEqual(-200);
+    });
   });
 });
