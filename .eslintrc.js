@@ -5,6 +5,7 @@ module.exports = {
     "jasmine": true
   },
   "rules": {
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "no-proto": 0
   }
 };

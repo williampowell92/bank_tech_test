@@ -6,7 +6,8 @@ describe('TransactionHistory', () => {
   let differentTransaction;
 
   beforeEach(() => {
-    transactionHistory = new TransactionHistory();
+    function MockTransaction() {}
+    transactionHistory = new TransactionHistory(MockTransaction);
     transaction = {
       date: new Date(2012, 1, 1),
       amount: 100,
@@ -26,26 +27,16 @@ describe('TransactionHistory', () => {
   });
 
   describe('addTransaction', () => {
-    it('can add a transaction to transactions', () => {
-      transactionHistory.add(transaction);
+    it('adds an object into transactions', () => {
+      transactionHistory.add(100, 1000, new Date(2012, 1, 1));
 
-      expect(transactionHistory.transactions).toEqual([transaction]);
+      expect(transactionHistory.transactions.length).toEqual(1);
     });
 
-    it('can add a different transaction to transactions', () => {
-      transactionHistory.add(differentTransaction);
+    it('creates an instance of a transaction object', () => {
+      transactionHistory.add(100, 1000, new Date(2012, 1, 1));
 
-      expect(transactionHistory.transactions).toEqual([differentTransaction]);
-    });
-
-    it('can add multiple transactions to transactions', () => {
-      transactionHistory.add(transaction);
-      transactionHistory.add(differentTransaction);
-
-      expect(transactionHistory.transactions).toEqual([
-        transaction,
-        differentTransaction,
-      ]);
+      expect(transactionHistory.transactions[0].__proto__.constructor.name).toEqual('MockTransaction');
     });
   });
 });
