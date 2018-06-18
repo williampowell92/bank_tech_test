@@ -2,9 +2,11 @@ const Account = require('../lib/Account');
 
 describe('Account', () => {
   let account;
+  let transactionHistory;
 
   beforeEach(() => {
-    account = new Account();
+    transactionHistory = {};
+    account = new Account(transactionHistory);
   });
 
   describe('balance', () => {
@@ -13,14 +15,22 @@ describe('Account', () => {
     });
   });
 
+  describe('transactionHistory', () => {
+    it('is created with a transaction history', () => {
+      expect(account.transactionHistory).toEqual(transactionHistory);
+    });
+  });
+
   describe('deposit', () => {
     it('increases balance by a given amount', () => {
       account.deposit(100);
+
       expect(account.balance).toEqual(100);
     });
 
     it('increases balance by a different amount', () => {
       account.deposit(200);
+
       expect(account.balance).toEqual(200);
     });
   });
@@ -28,11 +38,13 @@ describe('Account', () => {
   describe('withdraw', () => {
     it('reduces balance by a given amount', () => {
       account.withdraw(100);
+
       expect(account.balance).toEqual(-100);
     });
 
     it('reduces balance by a different amount', () => {
       account.withdraw(200);
+
       expect(account.balance).toEqual(-200);
     });
   });
