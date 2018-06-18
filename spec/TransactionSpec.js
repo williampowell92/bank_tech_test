@@ -6,7 +6,7 @@ describe('Transaction', () => {
 
   beforeEach(() => {
     transaction = new Transaction(new Date(2012, 1, 10), 100, 3000);
-    differentTransaction = new Transaction(new Date(2018, 7, 2), -100);
+    differentTransaction = new Transaction(new Date(2018, 7, 2), -100, 2000);
   });
 
   describe('date', () => {
@@ -32,6 +32,10 @@ describe('Transaction', () => {
   describe('balance', () => {
     it('is created with a balance', () => {
       expect(transaction.balance).toEqual(3000);
+    });
+
+    it('can be created with a different balance', () => {
+      expect(differentTransaction.balance).toEqual(2000);
     });
   });
 });
