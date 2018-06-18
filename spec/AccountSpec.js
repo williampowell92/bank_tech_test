@@ -33,6 +33,12 @@ describe('Account', () => {
 
       expect(account.balance).toEqual(200);
     });
+
+    it('calls add on transaction history', () => {
+      account.deposit(100, new Date(2012, 1, 1));
+
+      expect(transactionHistory.add).toHaveBeenCalledWith(100, 100, new Date(2012, 1, 1));
+    });
   });
 
   describe('withdraw', () => {
@@ -46,6 +52,12 @@ describe('Account', () => {
       account.withdraw(200);
 
       expect(account.balance).toEqual(-200);
+    });
+
+    it('calls add on transaction history', () => {
+      account.withdraw(100, new Date(2012, 1, 1));
+
+      expect(transactionHistory.add).toHaveBeenCalledWith(100, -100, new Date(2012, 1, 1));
     });
   });
 });
