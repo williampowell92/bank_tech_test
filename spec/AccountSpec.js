@@ -6,7 +6,7 @@ describe('Account', () => {
   let statement;
 
   beforeEach(() => {
-    transactionHistory = jasmine.createSpyObj('transactionHistory', ['add']);
+    transactionHistory = jasmine.createSpyObj('transactionHistory', ['addTransaction']);
     statement = jasmine.createSpyObj('statement', ['print']);
     account = new Account(transactionHistory, statement);
   });
@@ -39,7 +39,7 @@ describe('Account', () => {
     it('calls add on transaction history', () => {
       account.deposit(100, new Date(2012, 1, 1));
 
-      expect(transactionHistory.add).toHaveBeenCalledWith(100, 100, new Date(2012, 1, 1));
+      expect(transactionHistory.addTransaction).toHaveBeenCalledWith(100, 100, new Date(2012, 1, 1));
     });
   });
 
@@ -59,7 +59,7 @@ describe('Account', () => {
     it('calls add on transaction history', () => {
       account.withdraw(100, new Date(2012, 1, 1));
 
-      expect(transactionHistory.add).toHaveBeenCalledWith(-100, -100, new Date(2012, 1, 1));
+      expect(transactionHistory.addTransaction).toHaveBeenCalledWith(-100, -100, new Date(2012, 1, 1));
     });
   });
 
