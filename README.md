@@ -6,13 +6,39 @@ A CLI application for managing a banking account.
 
 This project has been created as part of my journey as a junior developer at Makers Academy.
 
+### Specification
+
+#### Requirements
+
+* You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
+* Deposits, withdrawal.
+* Account statement (date, amount, balance) printing.
+* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+
+#### Acceptance Criteria
+
+**Given** a client makes a deposit of 1000 on 10-01-2012  
+**And** a deposit of 2000 on 13-01-2012  
+**And** a withdrawal of 500 on 14-01-2012  
+**When** she prints her bank statement  
+**Then** she would see
+
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
+
 ### Class Diagram
 
 ![class diagram](https://i.imgur.com/lskgXJG.png)
 
 ### Approach
 
+The class diagram above was created at the start of the project to give an overarching plan. To guide the development of the application a feature test matching the acceptance criteria was written early on in the project. The application was then developed using test driven design.
 
+It was decided to use the constructor, prototype Javascript design pattern to allow the application to built in an object-orientated manner.
 
 ### Features
 
@@ -66,7 +92,9 @@ $ jasmine
 
 ### Further work
 
-
+- Errors for checking if the client withdraws below 0 balance.
+- Overdraft limits allowing the client to withdraw a certain amount below 0 balance.
+- Filtering of transaction history by date.
 
 ### Technologies
 
