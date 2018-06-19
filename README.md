@@ -51,7 +51,8 @@ It was decided to use the constructor, prototype Javascript design pattern to al
 This application was developed in Javascript using Node.js. Anyone wishing to use this application should install Node.js from their website, and then download and install the application as follows:
 
 ```
-$ git clone git@github.com:williampowell92/bank_tech_test.git
+$ git clone https://github.com/williampowell92/bank_tech_test
+$ cd <repo>
 $ npm install
 ```
 
@@ -88,7 +89,7 @@ Note: if no date is given in deposits or withdrawals, the current date will be u
 Testing was carried out using the Jasmine Node.js module. It will be downloaded when the program is installed. Tests can be run from the project home directory as follows:
 
 ```
-$ jasmine
+node node_modules/jasmine/bin/jasmine
 ```
 
 ### Further work
