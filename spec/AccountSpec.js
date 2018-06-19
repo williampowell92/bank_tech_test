@@ -57,7 +57,7 @@ describe('Account', () => {
     it('calls add on transaction history', () => {
       account.withdraw(100, new Date(2012, 1, 1));
 
-      expect(transactionHistory.add).toHaveBeenCalledWith(100, -100, new Date(2012, 1, 1));
+      expect(transactionHistory.add).toHaveBeenCalledWith(-100, -100, new Date(2012, 1, 1));
     });
   });
 });
