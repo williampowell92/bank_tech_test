@@ -1,4 +1,4 @@
-[Motivation](#motivation) | [Approach](#approach)
+[Motivation](#motivation) | [Specification](#specification) | [Approach](#approach) | [Features](#features) | [Installation](#installation) | [How to use?](#how-to-use?) | [Tests](#tests) | [Further work](#further-work) | [Technologies](#technologies)
 
 # Bank Tech Test
 
@@ -32,11 +32,9 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-### Class Diagram
+### Approach
 
 ![class diagram](https://i.imgur.com/lskgXJG.png)
-
-### Approach
 
 The class diagram above was created at the start of the project to give an overarching plan. To guide the development of the application a feature test matching the acceptance criteria was written early on in the project. The application was then developed using test driven design.
 
