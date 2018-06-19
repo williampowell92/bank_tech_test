@@ -1,4 +1,4 @@
-[Motivation](###) | [Approach](###)
+[Motivation](### Motivation) | [Approach](### Approach)
 
 # Bank Tech Test
 
