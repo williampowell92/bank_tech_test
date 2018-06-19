@@ -4,6 +4,7 @@ describe('Statement', () => {
   let statement;
   let transactionHistory;
   let differentTransactionHistory;
+  let multipleTransactionHistory;
   const oldLog = console.log;
 
   beforeEach(() => {
@@ -19,6 +20,19 @@ describe('Statement', () => {
 
     differentTransactionHistory = {
       transactions: [{
+        amount: 2000,
+        balance: 3000,
+        date: new Date(2012, 0, 13),
+      }],
+    };
+
+    multipleTransactionHistory = {
+      transactions: [{
+        amount: 1000,
+        balance: 1000,
+        date: new Date(2012, 0, 10),
+      },
+      {
         amount: 2000,
         balance: 3000,
         date: new Date(2012, 0, 13),
@@ -47,6 +61,12 @@ describe('Statement', () => {
 
     it('should print a different transaction', () => {
       statement.print(differentTransactionHistory);
+
+      expect(console.log).toHaveBeenCalledWith('13/01/2012 || 2000.00 || || 3000.00');
+    });
+
+    it('should print the first of multiple transactions', () => {
+      statement.print(multipleTransactionHistory);
 
       expect(console.log).toHaveBeenCalledWith('13/01/2012 || 2000.00 || || 3000.00');
     });
