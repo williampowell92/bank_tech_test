@@ -2,6 +2,10 @@
 
 A CLI application for managing a banking account.
 
+### Class Diagram
+
+![class diagram](https://i.imgur.com/CW05K5h.png)
+
 ### Motivation
 
 This project has been created as part of my journey as a junior developer at Makers Academy.
