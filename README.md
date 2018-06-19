@@ -1,3 +1,5 @@
+[Motivation](###) | [Approach](###)
+
 # Bank Tech Test
 
 A CLI application for managing a banking account.
