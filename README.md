@@ -64,6 +64,7 @@ Once you have downloaded Node and the application it can be run using the Node R
 ```
 $ node
 > const Account = require('./lib/Account');
+> let account;
 > account = new Account();
 > account.deposit(1000, new Date(2012, 0, 10));
 > account.deposit(2000, new Date(2012, 0, 13));
@@ -75,9 +76,9 @@ The output for this would be:
 
 ```
 date || credit || debit || balance
-10/01/2012 || 1000.00 || || 1000.00
-13/01/2012 || 2000.00 || || 3000.00
 14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
 ```
 
 Note: if no date is given in deposits or withdrawals, the current date will be used.
