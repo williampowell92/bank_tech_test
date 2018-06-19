@@ -6,6 +6,7 @@ describe('Statement', () => {
   let differentTransactionHistory;
   let multipleTransactionHistory;
   let negativeTransactionHistory;
+  let differentNegativeTransactionHistory;
   const oldLog = console.log;
 
   beforeEach(() => {
@@ -48,6 +49,14 @@ describe('Statement', () => {
       }],
     };
 
+    differentNegativeTransactionHistory = {
+      transactions: [{
+        amount: -2000,
+        balance: -3000,
+        date: new Date(2012, 0, 13),
+      }],
+    };
+
     console.log = jasmine.createSpy('log');
   });
 
@@ -84,6 +93,12 @@ describe('Statement', () => {
       statement.print(negativeTransactionHistory);
 
       expect(console.log).toHaveBeenCalledWith('14/01/2012 || || 500.00 || 2500.00');
+    });
+
+    it('should print a different transaction with a negative amount', () => {
+      statement.print(differentNegativeTransactionHistory);
+
+      expect(console.log).toHaveBeenCalledWith('13/01/2012 || || 2000.00 || -3000.00');
     });
   });
 });
