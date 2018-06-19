@@ -10,6 +10,10 @@ This project has been created as part of my journey as a junior developer at Mak
 
 ![class diagram](https://i.imgur.com/lskgXJG.png)
 
+### Approach
+
+
+
 ### Features
 
 - Clients can create individual accounts.
@@ -59,6 +63,10 @@ Testing was carried out using the Jasmine Node.js module. It will be downloaded 
 ```
 $ jasmine
 ```
+
+### Further work
+
+
 
 ### Technologies
 
