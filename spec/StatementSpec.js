@@ -12,7 +12,7 @@ describe('Statement', () => {
       transactions: {
         amount: 1000,
         balance: 1000,
-        date: new Date(2012, 1, 14),
+        date: new Date(2012, 1, 10),
       },
     };
 
@@ -28,6 +28,12 @@ describe('Statement', () => {
       statement.print(transactionHistory);
 
       expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
+    });
+
+    it('should print a transaction', () => {
+      statement.print(transactionHistory);
+
+      expect(console.log).toHaveBeenCalledWith('10/01/2012 || 1000.00 || || 1000.00');
     });
   });
 });
