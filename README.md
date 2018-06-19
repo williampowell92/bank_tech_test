@@ -1,4 +1,4 @@
-[Motivation](#motivation) | [Specification](#specification) | [Approach](#approach) | [Features](#features) | [Installation](#installation) | [How to use?](#how-to-use?) | [Tests](#tests) | [Further work](#further-work) | [Technologies](#technologies)
+[Motivation](#motivation) | [Specification](#specification) | [Approach](#approach) | [Features](#features) | [Installation](#installation) | [How to use?](#how-to-use) | [Tests](#tests) | [Further work](#further-work) | [Technologies](#technologies)
 
 # Bank Tech Test
 
