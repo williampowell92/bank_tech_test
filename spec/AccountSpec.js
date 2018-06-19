@@ -64,8 +64,10 @@ describe('Account', () => {
   });
 
   describe('printStatement', () => {
-    account.printStatement();
+    it('should call print on statement with correct arguments', () => {
+      account.printStatement();
 
-    expect(statement.print).toHaveBeenCalledWith(account.transactionHistory);
+      expect(statement.print).toHaveBeenCalledWith(account.transactionHistory);
+    });
   });
 });
