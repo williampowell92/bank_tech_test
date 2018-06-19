@@ -7,6 +7,7 @@ module.exports = {
   "rules": {
     "no-underscore-dangle": 0,
     "no-proto": 0,
-    "no-console": 0
+    "no-console": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   }
 };
