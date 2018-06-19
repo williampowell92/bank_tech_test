@@ -3,10 +3,12 @@ const Account = require('../lib/Account');
 describe('Account', () => {
   let account;
   let transactionHistory;
+  let statement;
 
   beforeEach(() => {
     transactionHistory = jasmine.createSpyObj('transactionHistory', ['add']);
-    account = new Account(transactionHistory);
+    statement = jasmine.createSpyObj('statement', ['print']);
+    account = new Account(transactionHistory, statement);
   });
 
   describe('balance', () => {
@@ -59,5 +61,11 @@ describe('Account', () => {
 
       expect(transactionHistory.add).toHaveBeenCalledWith(-100, -100, new Date(2012, 1, 1));
     });
+  });
+
+  describe('printStatement', () => {
+    account.printStatement();
+
+    expect(statement.print).toHaveBeenCalledWith(account.transactionHistory);
   });
 });

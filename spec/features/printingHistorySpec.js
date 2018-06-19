@@ -14,9 +14,9 @@ describe('printing balance history', () => {
 
   it('prints correct balance history', () => {
     account = new Account();
-    account.deposit(1000, new Date(2012, 1, 10));
-    account.deposit(2000, new Date(2012, 1, 13));
-    account.withdraw(500, new Date(2012, 1, 14));
+    account.deposit(1000, new Date(2012, 0, 10));
+    account.deposit(2000, new Date(2012, 0, 13));
+    account.withdraw(500, new Date(2012, 0, 14));
     account.printStatement();
     expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance');
     expect(console.log).toHaveBeenCalledWith('14/01/2012 || || 500.00 || 2500.00');
