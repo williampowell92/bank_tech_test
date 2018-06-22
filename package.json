@@ -4,7 +4,8 @@
   "description": "Practice tech test undertaken as part of my journey as Makers Academy. Create a CLI bank application for depositing, withdrawing and printing bank statements.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-cov": "istanbul cover --include-all-sources -x **/spec/** jasmine-node spec"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jasmine": "^2.10.1",
-    "jasmine": "^3.1.0"
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.1.0",
+    "jasmine-node": "^1.15.0"
   }
 }
